@@ -1,0 +1,124 @@
+<div class="pokemon-pagination grid-container">
+	<div class="pagination-item pagination-prev grid-50 tablet-grid-50 mobile-grid-50 padding-right-5">
+		<a href="/pokemon/{{ vm.prev.nationalId }}" title="Previous Pokemon" ng-bind="'#' + (vm.prev.nationalId |zpad:3) + ' ' +  vm.prev.name"></a>
+	</div>
+	<div class="pagination-item pagination-next grid-50 tablet-grid-50 mobile-grid-50 padding-left-5">
+		<a href="/pokemon/{{ vm.next.nationalId }}" title="Next Pokemon" ng-bind="vm.next.name + ' ' + '#' + (vm.next.nationalId |zpad:3)"></a>
+	</div>
+
+</div>
+
+
+<div class="pokemon-content grid-container padding-60 padding-top-0 tablet-padding-30 mobile-padding-15">
+
+
+	<h3 ng-bind="'#' + (vm.item.national_id |zpad:3) + ' ' +  vm.item.name"></h3>
+
+	<div class="pokemon-figure padding-0 grid-55 tablet-grid-100 mobile-grid-100">
+		<div class="pokedex-item-figure pokemon-item-figure">
+			<a href="/{{ vm.item.national_id }}" title="{{vm.item.name}}">
+				<div class="flipper">
+					<div class="front">
+						<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{vm.item.national_id | zpad: 3}}.png" alt="{{ vm.item.name }}" />
+					</div>
+					<div class="back">
+						<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{vm.item.national_id | zpad: 3}}.png" alt="{{ vm.item.name }}" />
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		<div class="type">
+			<div ng-repeat="type in vm.item.types" class="type-item type-item-{{type.name}}">
+				<span ng-bind="type.name"></span>
+			</div>
+		</div>
+	</div>
+	<div class="pokemon-info padding-0 grid-45 tablet-grid-100 mobile-grid-100 tablet-margin-top-20 mobile-margin-top-20">
+
+		<div class="grid-100 mobile-grid-100 tablet-grid-50 padding-0 padding-left-10 tablet-padding-right-5 mobile-padding-right-0  tablet-padding-left-0 mobile-padding-left-0">
+			<div class="pokemon-info-content">
+				<div class="pokemon-info-item grid-50 tablet-grid-50 mobile-grid-100">
+					<h4>Height</h4>
+					<p>{{ vm.item.height }}</p>
+				</div>
+
+				<div class="pokemon-info-item grid-50 tablet-grid-50 mobile-grid-100">
+					<h4>Abilities</h4>
+					<p ng-repeat="ability in vm.item.abilities">{{ ability.name }}</p>
+				</div>
+
+				<div class="pokemon-info-item grid-50 tablet-grid-50 mobile-grid-100">
+					<h4>Weight</h4>
+					<p>{{ vm.item.weight }}</p>
+				</div>
+				
+				
+			</div>
+		</div>
+
+		<div class="grid-100 mobile-grid-100 tablet-grid-50 padding-0 padding-left-10 tablet-padding-left-5 mobile-padding-left-0">
+			<div class="pokemon-stats">
+				<h4>Base stats</h4>
+
+				<div class="pokemon-stats-content">
+					<div class="pokemon-stats-item">
+						<div class="graph" ng-style="{bottom: ((vm.item.hp * 100) / 255) - 100 + 'px'}"></div>
+					</div>
+					<span>HP</span>
+				</div>
+				<div class="pokemon-stats-content">
+					<div class="pokemon-stats-item">
+						<div class="graph" ng-style="{bottom: ((vm.item.attack * 100) / 255) -100 + 'px'}"></div>
+					</div>
+					<span>Attack</span>
+				</div>
+				<div class="pokemon-stats-content">
+					<div class="pokemon-stats-item">
+						<div class="graph" ng-style="{bottom: ((vm.item.defense * 100) / 255) - 100 + 'px'}"></div>
+					</div>
+					<span>Defense</span>
+				</div>
+				<div class="pokemon-stats-content">
+					<div class="pokemon-stats-item">
+						<div class="graph" ng-style="{bottom: ((vm.item.sp_atk * 100) / 255) -100 + 'px'}"></div>
+					</div>
+					<span>Special Attack</span>
+				</div>
+				<div class="pokemon-stats-content">
+					<div class="pokemon-stats-item">
+						<div class="graph" ng-style="{bottom: ((vm.item.sp_def * 100) / 255) - 100 + 'px'}"></div>
+					</div>
+					<span>Special Defense</span>
+				</div>
+					
+				<div class="pokemon-stats-content">
+					<div class="pokemon-stats-item">
+						<div class="graph" ng-style="{bottom: ((vm.item.speed * 100) / 255 ) - 100 + 'px'}"></div>
+					</div>
+					<span>Speed</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pokemon-explore hide-on-desktop">
+		<a href="/" title="Explore more Pokemon" class="bt bt-secundary bt-explore">EXPLORE MORE POKEMON</a>
+	</div>
+
+	<div class="pokemon-moves">
+		<h4>Moves</h4>
+
+		<div class="moves-column grid-25 tablet-grid-50 mobile-grid-100 padding-10" ng-repeat="column in vm.movesColumns">
+			<ul>
+				<li ng-repeat="move in column">{{ move.name }}</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="pokemon-explore hide-on-mobile hide-on-tablet">
+		<a href="/" title="Explore more Pokemon" class="bt bt-secundary bt-explore">EXPLORE MORE POKEMON</a>
+	</div>
+	
+</div>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ./src/client/app/pokedex/pokedex.directive.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">./src/client/app/pokedex/pokedex.directive.js</span></h1>
+    <h2>
+        Statements: <span class="metric">10.64% <small>(5 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">9.09% <small>(1 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">10.64% <small>(5 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/pokedex/</a> &#187; pokedex.directive.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+    'use strict';
+&nbsp;
+    angular
+        .module('app.pokedex')
+        .directive('pokedexItem', pokedexItem)
+        //By http://sroze.github.io/ngInfiniteScroll/
+        .directive('infiniteScroll', [
+          '$rootScope', '$window', '$timeout', <span class="fstat-no" title="function not covered" >function($rootScope, $window, $timeout) {</span>
+<span class="cstat-no" title="statement not covered" >            return {</span>
+              link: <span class="fstat-no" title="function not covered" >function(scope, elem, attrs) {</span>
+<span class="cstat-no" title="statement not covered" >                var checkWhenEnabled, handler, scrollDistance, scrollEnabled;</span>
+<span class="cstat-no" title="statement not covered" >                $window = angular.element($window);</span>
+<span class="cstat-no" title="statement not covered" >                scrollDistance = 0;</span>
+<span class="cstat-no" title="statement not covered" >                if (attrs.infiniteScrollDistance != null) {</span>
+<span class="cstat-no" title="statement not covered" >                  scope.$watch(attrs.infiniteScrollDistance, <span class="fstat-no" title="function not covered" >function(value) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return scrollDistance = parseInt(value, 10);</span>
+                  });
+                }
+<span class="cstat-no" title="statement not covered" >                scrollEnabled = true;</span>
+<span class="cstat-no" title="statement not covered" >                checkWhenEnabled = false;</span>
+<span class="cstat-no" title="statement not covered" >                if (attrs.infiniteScrollDisabled != null) {</span>
+<span class="cstat-no" title="statement not covered" >                  scope.$watch(attrs.infiniteScrollDisabled, <span class="fstat-no" title="function not covered" >function(value) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    scrollEnabled = !value;</span>
+<span class="cstat-no" title="statement not covered" >                    if (scrollEnabled &amp;&amp; checkWhenEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >                      checkWhenEnabled = false;</span>
+<span class="cstat-no" title="statement not covered" >                      return handler();</span>
+                    }
+                  });
+                }
+<span class="cstat-no" title="statement not covered" >                handler = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                  var elementBottom, remaining, shouldScroll, windowBottom;</span>
+<span class="cstat-no" title="statement not covered" >                  windowBottom = $window.height() + $window.scrollTop();</span>
+<span class="cstat-no" title="statement not covered" >                  elementBottom = elem.offset().top + elem.height();</span>
+<span class="cstat-no" title="statement not covered" >                  remaining = elementBottom - windowBottom;</span>
+<span class="cstat-no" title="statement not covered" >                  shouldScroll = remaining &lt;= $window.height() * scrollDistance;</span>
+<span class="cstat-no" title="statement not covered" >                  if (shouldScroll &amp;&amp; scrollEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >                    if ($rootScope.$$phase) {</span>
+<span class="cstat-no" title="statement not covered" >                      return scope.$eval(attrs.infiniteScroll);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                      return scope.$apply(attrs.infiniteScroll);</span>
+                    }
+                  } else <span class="cstat-no" title="statement not covered" >if (shouldScroll) {</span>
+<span class="cstat-no" title="statement not covered" >                    return checkWhenEnabled = true;</span>
+                  }
+                };
+<span class="cstat-no" title="statement not covered" >                $window.on('scroll', handler);</span>
+<span class="cstat-no" title="statement not covered" >                scope.$on('$destroy', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                  return $window.off('scroll', handler);</span>
+                });
+<span class="cstat-no" title="statement not covered" >                return $timeout((<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                  if (attrs.infiniteScrollImmediateCheck) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (scope.$eval(attrs.infiniteScrollImmediateCheck)) {</span>
+<span class="cstat-no" title="statement not covered" >                      return handler();</span>
+                    }
+                  } else {
+<span class="cstat-no" title="statement not covered" >                    return handler();</span>
+                  }
+                }), 0);
+              }
+            };
+          }
+        ]);
+&nbsp;
+        pokedexItem.$inject = ['dataservice', 'logger'];
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function pokedexItem(dataservice, logger) </span>
+        {
+<span class="cstat-no" title="statement not covered" >            var directive = {</span>
+                bindToController: true,
+                controller: PokedexItemController,
+                controllerAs: 'vm',
+                restrict: 'EA',
+                scope: { 
+                    'resourceUri': '=resourceUri'
+                    
+                },
+                templateUrl: 'app/pokedex/pokedex-item.html'
+            };
+&nbsp;
+            /* @ngInject */
+<span class="fstat-no" title="function not covered" >            function PokedexItemController($scope) {</span>
+                
+<span class="cstat-no" title="statement not covered" >                var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >                vm.loaded = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                dataservice.getPokemonInfo(vm.resourceUri).then(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    vm.item = data;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    vm.loaded = true;</span>
+                });
+&nbsp;
+            }
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return directive;</span>
+        }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Dec 19 2015 11:00:04 GMT-0200 (Horário brasileiro de verão)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

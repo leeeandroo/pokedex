@@ -1,0 +1,26 @@
+
+<div ng-show="vm.loaded">
+
+	<h3 ng-bind="'#' + (vm.item.national_id |zpad:3) + ' ' +  vm.item.name"></h3>
+	<div class="pokedex-item-figure">
+		<a href="/pokemon/{{ vm.item.national_id }}" title="{{vm.item.name}}">
+			<div class="flipper">
+				<div class="front">
+					<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/{{vm.item.national_id | zpad: 3}}.png" alt="{{ vm.item.name }}" />
+				</div>
+				<div class="back">
+					<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/{{vm.item.national_id | zpad: 3}}.png" alt="{{ vm.item.name }}" />
+				</div>
+			</div>
+			
+		</a>
+	</div>
+	<div class="type">
+		<div ng-repeat="type in vm.item.types" class="type-item type-item-{{type.name}}">
+			<span ng-bind="type.name"></span>
+		</div>
+	</div>
+</div>
+<div ng-show="!vm.loaded" class="pokedex-item-loading">
+	<img src="/images/loading.gif" alt="Loading..." />
+</div>

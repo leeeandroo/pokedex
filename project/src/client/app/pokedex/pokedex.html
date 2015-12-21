@@ -1,0 +1,13 @@
+<div class="pokedex-content grid-container padding-60 tablet-padding-30 mobile-padding-15">
+
+	<h2>{{vm.title}}</h2>
+
+	<ul infinite-scroll="vm.loadMore()" infinite-scroll-distance="0" infinite-scroll-disabled="!vm.infiniteScrollEnable">
+	    <li ng-repeat="item in vm.pokemons | startFrom:vm.currentPage*vm.pageSize | limitTo:vm.pageSize" class="grid-25 tablet-grid-50 mobile-grid-100">
+	        <div pokedex-item resource-uri="item.resource_uri" class="pokedex-item grid-100 mobile-grid-100 tablet-grid-100"></div>
+	    </li>
+	</ul>
+
+	<a href="#" ng-click="vm.loadMore();" class="bt bt-primary bt-load-more" ng-show="vm.showLoadMore">LOAD MORE</a>
+
+</div>
